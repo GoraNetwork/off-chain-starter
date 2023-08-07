@@ -75,14 +75,14 @@ of the program with a shared context that includes current execution number.
 
 During a step, the program can schedule HTTP(S) requests, possibly using URL
 templates that it can fill at run time. When the step ends, these requests are
-executed by the Gora node and on their completion the next step commences.  The
-program can access results of HTTP requests as other node-provided data such as
-the number of step currently executing via the structure the node passes to it
-as an argument.
+executed by the Gora node and on their completion, the next step commences. The
+program can access request results as well as other node-provided data such as
+the number of step currently executing via the structure passes to it as an
+argument.
 
 Finishing a step, the program always returns a value which tells the Gora node
 what to do next: execute another step, finish successfully or terminate with a
-specified error code. For list of available error codes, consider
+specific error code. For the list of valid return values, consider
 `gora_off_chain.h` header file.
 
 To compile the example, run Clang C compiler version 12 or newer:
