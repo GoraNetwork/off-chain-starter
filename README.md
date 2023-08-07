@@ -33,8 +33,8 @@ will automatically recognize it and apply decompression.
 Like other types of Gora oracle requests, off-chain requests are made by calling
 the `request` method of the main Gora smart contract. The `request_type` call
 parameter must be set to `3`, signifying that it is an off-chain computation
-request. The `request_args` argument is populated with request specification
-which is the encoded instance of the following *Algorand ABI* type:
+request. The `request_args` argument is populated with the request specification
+which is an encoded instance of the following *Algorand ABI* type:
 
  * `apiVersion: uint32` - minimum off-chain API version required, currently must
    be set to `1`.
