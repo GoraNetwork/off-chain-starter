@@ -66,12 +66,12 @@ The `multi_step_example.c` off-chain program takes a British postcode as a
 parameter, queries two data sources, building their URLs dynamically, and
 returns current air temperature in the area of said postcode.
 
-It requires two inter-depended operations: getting postcode geographical
-coordinates and querying current weather at them. Because of certain inherent
-limitations of Web Assembly, programs cannot efficiently pause while waiting to
-receive data from extrnal sources such as URLs. To work around that, Gora
-off-chain programs are run in *steps*. Steps are essentially repeated executions
-of the program with a shared context that includes current execution number.
+It requires two data-retrival operations: getting postcode geographical
+coordinates and querying current weather at them. Because of certain limitations
+of Web Assembly, programs cannot efficiently pause while waiting to receive data
+from extrnal sources such as URLs. To work around that, Gora off-chain programs
+are run in *steps*. Steps are essentially repeated executions of the program
+with a shared context that includes current execution number.
 
 During a step, the program can schedule HTTP(S) requests, possibly using URL
 templates that it can fill at run time. When the step ends, these requests are
